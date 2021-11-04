@@ -23,7 +23,7 @@
 .description {
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 
 .grid {
@@ -45,7 +45,6 @@
   max-width: 300px;
 }
 
-
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.25rem;
@@ -60,20 +59,20 @@
 }
 
 .card h5 {
- margin: 0;
- font-size: .75rem;
- font-weight: normal;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: normal;
 }
 
 .card p {
- margin: 0;
- font-size: .55rem;
- float: left;
+  margin: 0;
+  font-size: 0.55rem;
+  float: left;
 }
 
 .card img {
   float: right;
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .image {
@@ -91,7 +90,7 @@
 
 .topbar h4 {
   margin: 1rem 1rem 0 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: gray;
   font-weight: normal;
 }
@@ -100,5 +99,3 @@
   color: black;
   border-bottom: 2px solid red;
 }
-
-

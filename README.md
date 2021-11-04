@@ -34,9 +34,9 @@ I was able to complete the following tasks:
 
 A few notes on process:
 
-* I decided to build this app with Next.js because I've been working with it recently and I felt confident in my ability to fetch data from the News API by using the built in method, `getServerSideProps`. The CSS that comes with `create-next-app` isn't terribly different from the CSS shown in the mock-up, so I figured I could save a little time by using the fonts and styles that are included.
+* I decided to build this app with Next.js because I've been working with it recently and I felt confident in my ability to fetch data from the News API by using the built in method, `getServerSideProps` in `pages/index.js`. 
 
-* After reaching MVP, I refactored a bit to break up the page into separate components and to use CSS modules to style each component. I was able to get reasonable close to the CSS in the mock up. 
+* The CSS that comes with `create-next-app` isn't terribly different from the CSS shown in the mock-up, so I figured I could save a little time by using the fonts and styles that are included. After reaching MVP, I refactored a bit to break up the page into separate components and to use CSS modules to style each component. I was able to get reasonable close to the CSS in the mock up. 
 
 ### If I had more time...
 

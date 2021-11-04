@@ -1,8 +1,16 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import styles from '../styles/Home.module.css'
+import { getPopularNewsStories } from '../utils/news'
+import Header from '../components/Header';
+import ArticleList from '../components/ArticleList';
+import Footer from '../components/Footer'
 
-export default function Home() {
+//fetch data from api - render on page
+//use map to create a card for each article
+
+const Home = ({newsStories}) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -12,74 +20,20 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <header>
-        <h1 className={styles.title}>
-          EXPLORE
-        </h1>
-        </header>
-
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        <Header />
+        <ArticleList newsStories={newsStories} />
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         Today
-        </a>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         Explore
-        </a>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         Sections
-        </a>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         Account
-        </a>
-      </footer>
+      <Footer />
     </div>
   )
 }
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=1da23b1cc2fb4efca3e8138e7610d0d3`)
+  const newsStories = await res.json()
+  // Pass data to the page via props
+  return { props: { newsStories } }
+}
+
+export default Home;

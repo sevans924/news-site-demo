@@ -29,7 +29,7 @@ const Footer = () => {
         <div>
           <nav className={styles.footer}>
             {navItems.map(({ path, label }) => (
-              <a>
+              <a key={path} href={path}>
                 <p>{label}</p>
               </a>
             ))}

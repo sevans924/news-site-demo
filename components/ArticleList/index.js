@@ -6,12 +6,15 @@ const articles = newsStories.articles
 
 return (
  <div>
-
+  <div className={styles.topbar}>
+    <h4 className={styles.h4_active}>Popular</h4>
+    <h4>Latest</h4>
+  </div>
   <div className={styles.grid}>
     {articles.length ? (
       articles.map(
         ({ author, title, description, url, urlToImage, publishedAt }) => (
-          <div className={styles.card}>
+          <div key={title} className={styles.card}>
             <a href={url}>
               <div className={styles.image_wrapper}>
                 <img

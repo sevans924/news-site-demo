@@ -84,3 +84,21 @@
   height: 100%;
 }
 
+.topbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.topbar h4 {
+  margin: 1rem 1rem 0 0;
+  font-size: .9rem;
+  color: gray;
+  font-weight: normal;
+}
+
+.h4_active {
+  color: black;
+  border-bottom: 2px solid red;
+}
+
+

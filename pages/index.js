@@ -2,13 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import styles from '../styles/Home.module.css'
-import { getPopularNewsStories } from '../utils/news'
 import Header from '../components/Header';
 import ArticleList from '../components/ArticleList';
 import Footer from '../components/Footer'
-
-//fetch data from api - render on page
-//use map to create a card for each article
 
 const Home = ({newsStories}) => {
   return (

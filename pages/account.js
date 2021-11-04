@@ -1,9 +1,9 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css"
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import styles from "../styles/Home.module.css";
 
-const About = () => {
+const Account = () => {
   return (
     <>
       <Head>
@@ -38,4 +38,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Account;

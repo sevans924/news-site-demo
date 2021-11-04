@@ -20,3 +20,7 @@
   align-items: center;
   flex-grow: 1;
 }
+
+.icon_block {
+  display: block;
+}

@@ -30,7 +30,10 @@ const Footer = () => {
           <nav className={styles.footer}>
             {navItems.map(({ path, label }) => (
               <a key={path} href={path}>
+                <div className={styles.icon_block}>
+                <img src="square.png" />
                 <p>{label}</p>
+                </div>
               </a>
             ))}
           </nav>
